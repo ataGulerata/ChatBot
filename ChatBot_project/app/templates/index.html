@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Sohbet</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #e0e0e0;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: transparent;
+        }
+
+        .stars::before, .stars::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: -1;
+        }
+
+        .stars::before {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1px, transparent 2px);
+            background-size: 50px 50px;
+            animation: move-stars 50s linear infinite;
+        }
+
+        .stars::after {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 2px);
+            background-size: 100px 100px;
+            animation: move-stars 100s linear infinite;
+        }
+
+        @keyframes move-stars {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-100%);
+            }
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 450px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-header {
+            background-color: #4CAF50;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #4CAF50 rgba(30, 30, 30, 0.8);
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(30, 30, 30, 0.8);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background-color: #4CAF50;
+            border-radius: 10px;
+        }
+
+        .chat-message {
+            margin-bottom: 15px;
+        }
+
+        .chat-message.user {
+            text-align: right;
+        }
+
+        .chat-message.bot {
+            text-align: left;
+        }
+
+        .chat-message .message-content {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .chat-message.user .message-content {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+
+        .chat-message.bot .message-content {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: rgba(30, 30, 30, 0.8);
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chat-input input::placeholder {
+            color: #aaaaaa;
+        }
+
+        .chat-input button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #ffffff;
+            border: none;
+            border-radius: 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .chat-input button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div> <!-- Hareketli yıldız efektleri -->
+    <div class="chat-container">
+        <div class="chat-header">Chatbot Sohbet</div>
+        <div class="chat-messages" id="chat"></div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Mesajınızı yazın..." onkeydown="handleKey(event)">
+            <button onclick="sendMessage()">Gönder</button>
+        </div>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('userInput').value.trim();
+            const chat = document.getElementById('chat');
+
+            if (userInput === "") return;
+
+            const userMessage = document.createElement("div");
+            userMessage.className = "chat-message user";
+            userMessage.innerHTML = `<div class="message-content">${userInput}</div>`;
+            chat.appendChild(userMessage);
+
+            fetch('/get_response', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                const botMessage = document.createElement("div");
+                botMessage.className = "chat-message bot";
+                botMessage.innerHTML = `<div class="message-content">${data.response}</div>`;
+                chat.appendChild(botMessage);
+
+                chat.scrollTop = chat.scrollHeight;
+            });
+
+            document.getElementById('userInput').value = '';
+        }
+
+        function handleKey(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>

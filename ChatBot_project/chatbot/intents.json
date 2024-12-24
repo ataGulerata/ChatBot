@@ -1,0 +1,186 @@
+{
+    "intents": [
+        {
+            "tag": "selam",
+            "patterns": ["Merhaba", "Selam", "Hey", "Nasılsın?", "Selamlar", "Merhaba nasılsın?"],
+            "responses": ["Merhaba!", "Selam! Size nasıl yardımcı olabilirim?", "Hoş geldiniz!", "Selamlar! Bugün nasılsınız?"]
+        },
+        {
+            "tag": "vedalasma",
+           "patterns": ["Güle güle", "Hoşça kal", "Görüşürüz", "Bay bay", "Hoşça kalın", "Bir dahaki sefere görüşmek üzere"],
+            "responses": ["Görüşürüz!", "Hoşça kalın!", "Yakında tekrar görüşmek üzere!", "Bay bay! Dikkatli olun!"]
+        },
+        {
+            "tag": "hava_durumu",
+            "qa_pairs": [
+                {"pattern": "Hava durumu nedir?", "response": "Bugün hava açık ve güneşli."},
+                {"pattern": "Bugün yağmur var mı?", "response": "Bugün hava durumu hakkında net bir bilgiye sahip değilim."}
+            ],
+            "patterns": ["Bugün hava nasıl?", "Yağmur yağacak mı?"],
+            "responses": ["Bugün yağmurlu bir gün olabilir.", "Hava durumunu kontrol etmeniz faydalı olur."]
+        },
+        {
+            "tag": "yardim",
+            "patterns": ["Yardım et", "Ne yapabilirsin?", "Neler yapabiliyorsun?", "Nasıl yardımcı olabilirsin?"],
+            "responses": ["Ben bir chatbotum. Hava durumu, genel sorular ve selamlaşma gibi konularda yardımcı olabilirim.", "Sohbet edebilirim, sorularınızı yanıtlayabilirim."]
+        },
+        {
+            "tag": "tarih_saat",
+            "patterns": ["Şu an saat kaç?", "Bugün günlerden ne?", "Şimdi saat kaç?"],
+            "responses": ["Şu anki saat bilgisini maalesef veremiyorum, ancak cihazınızın saatini kontrol edebilirsiniz.", "Bugün Pazartesi, saat 14:32."]
+        },
+        {
+            "tag": "eğlence",
+            "patterns": ["Bana bir şaka yap", "Komik bir şey söyle", "Beni güldür"],
+            "responses": ["Bilgisayar neden denize atlamış? Çünkü içinde çok fazla C vardı!", "Bir programcı köprüde neden durur? Çünkü kodu köprüde kırılmıştır!"]
+        },
+        {
+            "tag": "meslek",
+            "patterns": ["Hangi meslekleri önerirsin?", "Gelecek için en iyi meslekler hangileri?", "Hangi alanlarda çalışmalıyım?"],
+            "responses": ["Yazılım geliştirme, gelecekte büyük bir fırsat sunuyor.", "Veri bilimi, çok talep gören bir alan.", "Dijital pazarlama, internet çağında önemli bir meslek dalı."]
+        },
+        {
+            "tag": "bilgi_sorgulama",
+            "patterns": ["Python nedir?", "Makine öğrenmesi nedir?", "Yapay zeka nedir?", "Veri bilimi nedir?"],
+            "responses": ["Python, popüler bir programlama dilidir.", "Makine öğrenmesi, verilerden öğrenen algoritmaların genel adıdır.", "Yapay zeka, makinelerin insan zekasına benzer işlemler yapmasını sağlayan bir bilimdir.", "Veri bilimi, büyük verilerden anlamlı bilgiler çıkarma sürecidir."]
+        },
+        {
+             "tag": "genel_kultur",
+             "qa_pairs": [
+                {"pattern": "Dünyanın en yüksek dağı hangisidir?", "response": "Dünyanın en yüksek dağı Everest'tir."},
+                {"pattern": "En büyük okyanus hangisi?", "response": "Dünyanın en büyük okyanusu Pasifik Okyanusu'dur."},
+                {"pattern": "En kalabalık ülke hangisi?", "response": "Dünyanın en kalabalık ülkesi Çin'dir."},
+                {"pattern": "En küçük ülke hangisi?", "response": "Dünyanın en küçük ülkesi Vatikan'dır."}
+             ],
+             "patterns": ["Dünyanın en büyükleri hakkında bilgi ver", "Genel kültür soruları sor", "Bana genel kültür bilgisi ver"],
+             "responses": ["Everest, dünyanın en yüksek dağıdır.", "Pasifik Okyanusu, en büyük okyanustur.", "Çin, nüfus bakımından dünyanın en kalabalık ülkesidir."]
+        },
+        {
+            "tag": "şifre_kurtarma",
+            "patterns": ["Şifremi unuttum, ne yapmalıyım?", "Hesap kurtarma hakkında bilgi ver", "E-posta şifremi unuttum."],
+            "responses": ["Hesap kurtarma adımlarını takip ederek şifrenizi sıfırlayabilirsiniz.", "E-posta sağlayıcınızın destek sayfasına giderek kurtarma seçeneklerini kontrol edin.", "Güvenli bir şifre yöneticisi kullanmayı düşünebilirsiniz."]
+        },
+        {
+            "tag": "sağlık_tavsiyeleri",
+            "patterns": ["Sağlıklı beslenme hakkında bilgi ver", "Formda kalmak için ne yapmalıyım?", "Sağlıklı yaşam önerilerin neler?"],
+            "responses": ["Her gün en az 2 litre su içmeye özen gösterin.", "Taze meyve ve sebzelerle beslenin.", "Düzenli egzersiz yaparak fiziksel sağlığınızı koruyabilirsiniz."]
+        },
+        {
+            "tag": "motivasyon",
+            "qa_pairs": [
+                {"pattern": "Bana motivasyon ver", "response": "Başarısızlık, daha akıllıca başlama fırsatıdır."},
+                {"pattern": "Bir motivasyon sözü söyle", "response": "Her zaman bir yol vardır, bazen sadece biraz daha araman gerekir."}
+            ],
+            "patterns": ["Motivasyona ihtiyacım var"],
+            "responses": ["Hedeflerinize ulaşmak için küçük adımlar atmaya devam edin.", "Daha iyi bir yarın için bugün çalışmaya devam edin!"]
+        },
+        {
+            "tag": "egitim",
+            "patterns": ["Eğitimle ilgili öneriler ver", "Hangi konuları öğrenmeliyim?", "Kendimi geliştirmek için ne yapabilirim?"],
+            "responses": ["Programlama dillerini öğrenmek gelecekte çok işinize yarayabilir.", "Kendi kendine öğrenme için online kurs platformlarını kullanabilirsiniz.", "Kitap okumak ve uygulamalı çalışmalar yapmak öğrenme sürecinizi hızlandırır."]
+        },
+        {
+            "tag": "tesekkur",
+            "patterns": ["Teşekkür ederim", "Sağ ol", "Minnettarım"],
+            "responses": ["Rica ederim!", "Her zaman yardıma hazırım!", "Sizin için buradayım!"]
+        },
+        {
+            "tag": "cikis",
+            "patterns": ["Çıkış yap", "Uygulamadan çık", "Görüşürüz"],
+            "responses": ["Görüşürüz, hoşça kalın!", "Uygulamayı kapatıyorum. İyi günler dilerim!", "Sizinle konuşmak güzeldi. Görüşmek üzere!"]
+        },
+        {
+            "tag": "film_onerisi",
+           "patterns": ["Bana bir film öner", "Hangi filmi izlemeliyim?", "İzlemek için güzel bir film önerir misin?", "En iyi filmler neler?"],
+            "responses": ["Inception (2010) - Christopher Nolan'ın bu şaheseri, bilimkurgu ve gerilim sevenler için harika bir seçenek.", "Parasite (2019) - Bong Joon-ho'nun Oscar ödüllü filmi, muhteşem bir toplumsal eleştiri sunuyor.", "The Godfather (1972) - Sinema tarihinin en iyi filmlerinden biri, kesinlikle izlemelisiniz.", "Interstellar (2014) - Uzay ve bilimkurgu sevenler için kaçırılmayacak bir yapım."]
+        },
+        {
+            "tag": "dizi_onerisi",
+            "patterns": ["Bana bir dizi öner", "Hangi diziyi izlemeliyim?", "İzlemek için güzel bir dizi önerir misin?"],
+            "responses": ["Breaking Bad - Gerilim dolu bir hikaye arıyorsanız harika bir seçim.", "Stranger Things - Bilimkurgu ve nostalji sevenler için harika bir seçenek.", "Dark - Zaman yolculuğu ve karmaşık hikaye örgüleriyle sizi büyüleyecek bir dizi."]
+        },
+        {
+            "tag": "müzik_onerisi",
+            "patterns": ["Bana bir müzik öner", "Ne dinlemeliyim?", "İyi bir şarkı önerir misin?"],
+            "responses": ["Imagine Dragons - Believer dinlemeyi deneyin.", "Adele - Rolling in the Deep güzel bir seçim olabilir.", "Coldplay - Viva La Vida harika bir şarkıdır."]
+        },
+        {
+            "tag": "oyun_onerisi",
+            "patterns": ["Hangi oyunu oynayabilirim?", "Bana bir oyun öner", "En popüler oyunlar neler?"],
+            "responses": ["The Legend of Zelda: Breath of the Wild, harika bir macera oyunudur.", "Elden Ring gibi aksiyon oyunlarını deneyebilirsiniz.", "Minecraft, yaratıcı yönünüzü geliştirebilir."]
+        },
+        {
+            "tag": "alışveriş_onerisi",
+            "patterns": ["Hangi online alışveriş sitelerini önerirsin?", "Nereden alışveriş yapabilirim?", "Online alışveriş önerir misin?"],
+            "responses": ["Amazon, geniş ürün yelpazesiyle harika bir seçenek.", "Trendyol, hızlı teslimat ve indirimlerle iyi bir tercih.", "Hepsiburada, Türkiye'deki popüler alışveriş sitelerinden biridir."]
+        },
+        {
+            "tag": "kitap_onerisi",
+            "patterns": ["Bana bir kitap öner", "Ne okumalıyım?", "İyi bir kitap önerir misin?"],
+            "responses": ["George Orwell - 1984 mutlaka okumanız gereken bir eser.", "Haruki Murakami - Koşmasaydım Yazamazdım ilginç bir biyografidir.", "J.K. Rowling - Harry Potter serisi fantastik bir dünya sunar."]
+        },
+        {
+            "tag": "tatil_onerisi",
+            "patterns": ["Yaz tatili için nereye gitmeliyim?", "Tatil önerisi ver", "En güzel tatil yerleri neresi?"],
+            "responses": ["Maldivler, huzurlu ve egzotik bir tatil için mükemmel bir yerdir.", "Antalya'nın plajları ve tarihi yerleri harika bir tatil seçeneği sunar.", "Kapadokya'nın eşsiz peri bacaları unutulmaz bir tatil deneyimi yaşatır."]
+        },
+        {
+            "tag": "uyku",
+            "patterns": ["Daha iyi uyumak için ne yapmalıyım?", "Uykusuzluk nasıl geçer?", "Uyku hakkında önerilerin var mı?"],
+            "responses": ["Yatmadan önce ekran süresini azaltmayı deneyin.", "Her gün aynı saatte yatmaya ve kalkmaya özen gösterin.", "Ilımlı bir sıcaklık ve karanlık bir ortamda uyumaya çalışın."]
+        },
+        {
+            "tag": "saglik",
+            "qa_pairs": [
+                {"pattern": "Başım ağrıyor ne yapmalıyım?", "response": "Baş ağrınız için bir doktora başvurmanız iyi olur."},
+                {"pattern": "Soğuk algınlığına ne iyi gelir?", "response": "Soğuk algınlığı için bol sıvı tüketip dinlenmek faydalıdır."}
+            ],
+            "patterns": ["Daha sağlıklı olmak için ne yapmalıyım?", "Egzersiz önerir misin?"],
+            "responses": ["Sağlıklı kalmak için düzenli egzersiz yapmayı ve dengeli beslenmeyi unutmayın.", "Meditasyon yaparak zihinsel sağlığınızı güçlendirebilirsiniz."]
+        },
+        {
+            "tag": "teknoloji",
+            "qa_pairs": [
+                {"pattern": "Yeni teknolojiler neler?", "response": "Yapay zeka, günümüzde birçok alanda en önemli teknolojik gelişmelerden biri."},
+                {"pattern": "En yeni teknolojik trendler nedir?", "response": "Blockchain teknolojisi, finansal işlemler ve güvenlik için devrim niteliğinde."}
+            ],
+            "patterns": ["Teknoloji hakkında bilgi ver"],
+            "responses": ["Nesnelerin İnterneti (IoT), günlük cihazların birbirine bağlanmasını sağlar.", "5G teknolojisi, daha hızlı internet bağlantıları sağlıyor."]
+        },
+        {
+            "tag": "finans",
+            "patterns": ["Dolar kuru nedir?", "Euro ne kadar?", "Bitcoin fiyatı nedir?"],
+            "responses": ["Güncel döviz kurlarına bakmak için bir finans uygulaması kullanabilirsiniz.", "Bitcoin fiyatı piyasa koşullarına göre değişir, güncel fiyatı kontrol edin."]
+        },
+        {
+            "tag": "tarif",
+            "patterns": ["Bana bir yemek tarifi öner", "Ne pişirebilirim?", "Kolay bir yemek tarifi var mı?"],
+            "responses": ["Spagetti Napoliten: Makarna, domates sosu ve baharatlarla hazırlayabilirsiniz.", "Menemen: Yumurta, domates ve biber ile hızlıca yapabilirsiniz.", "Mercimek Çorbası: Sağlıklı ve doyurucu bir çorba tarifi!"]
+        },
+        {
+            "tag": "programlama",
+            "patterns": ["Hangi programlama dilini öğrenmeliyim?", "Programlama hakkında bilgi ver", "Kodlama öğrenmek istiyorum."],
+            "responses": ["Python, kolay öğrenilebilir ve çok yönlü bir dildir.", "JavaScript, web geliştirme için harika bir başlangıçtır.", "Java, hem kurumsal hem de mobil projelerde yaygın olarak kullanılır."]
+        },
+        {
+            "tag": "meslek",
+            "patterns": ["Hangi meslekleri önerirsin?", "Gelecek için en iyi meslekler hangileri?", "Hangi alanlarda çalışmalıyım?"],
+            "responses": ["Yazılım geliştirme, gelecekte büyük bir fırsat sunuyor.", "Veri bilimi, çok talep gören bir alan.", "Dijital pazarlama, internet çağında önemli bir meslek dalı."]
+        },
+        {
+            "tag": "uyku_düzeni",
+            "patterns": ["Uyku düzenimi nasıl geliştirebilirim?", "Daha iyi uyumak için ne yapmalıyım?", "Uykusuzluk hakkında önerilerin var mı?"],
+            "responses": ["Her gün aynı saatte yatmaya ve kalkmaya çalışın.", "Yatmadan önce elektronik cihazlardan uzak durun.", "Yatmadan önce bitki çayı içmek rahatlatıcı olabilir."]
+        },
+        {
+            "tag": "gezi_onerisi",
+            "patterns": ["Tatil için nereye gidebilirim?", "Bana bir tatil öner", "Gezilecek güzel yerler var mı?"],
+            "responses": ["Kapadokya - Balon turları ve eşsiz peri bacalarıyla ünlüdür.", "Antalya - Plajları ve tarihi yerleriyle harika bir tatil şehri.", "Efes Antik Kenti - Tarih meraklıları için mükemmel bir yer."]
+        },
+        {
+            "tag": "spor",
+            "patterns": ["Hangi sporu yapmalıyım?", "Sağlıklı kalmak için hangi sporları önerirsin?", "Evde yapılacak egzersizler var mı?"],
+            "responses": ["Yoga - Hem bedensel hem zihinsel rahatlama için harika bir spordur.", "Koşu - Kardiyo yapmak ve enerjinizi artırmak için önerilir.", "Evde pilates veya esneme hareketleri deneyebilirsiniz."]
+        }
+    ]
+}
